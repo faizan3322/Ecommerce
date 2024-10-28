@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+body{
+    background-image: linear-gradient(to right, #c3e455, #773bfa);
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+}
+/* .copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;border: solid 1px red;
+} */
+ .btn1 ,.btn2{
+    padding: 20px;
+    width: 90px;
+    margin: 20px;
+    border-radius: 15%;
+    border: solid 1px black;
+    font-size: 1rem;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:rgb(59, 48, 48)  ;
+    color:white;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.5s ease-in-out;
+ }
+ .btn1:hover ,.btn2:hover{
+    background-color:rgb(39, 33, 33)  ;
+ }
+ .showCode{
+    /* border: solid 1px grey; */
+    margin: 40px;
+    padding: 50px;
+    box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.3),-10px -10px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+ }
+ h2{
+    font-size: 1rem;
+ }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button class="btn1">#0000</button>
+        <button class="btn2">#ffff</button>
+    </div>
+    <div class="copy">
+        <h2>Copy Your Code Here</h2>
+    </div>
+    <div class="showCode">
+        background-image: linear-gradient(to right, #c3e455, #773bfa);
+    </div>
+    <script>
+        let btn1 = document.querySelector('.btn1');
+let btn2 = document.querySelector('.btn2');
+let hexValues = "0123456789abcdef";
+let showCode = document.querySelector('.showCode');
+let rgb1 = "#0000";
+let rgb2 = "#ffff";
+
+let genHash = () => {
+    let Hash = "#";
+    for (let i = 0; i < 6; i++) {
+        Hash = Hash + hexValues[Math.floor(Math.random() * 16)];
+
+    }
+    return Hash;
+
+}
+
+let handleButton1 = () => {
+    rgb1 = genHash()
+    btn1.innerText = rgb1;
+    document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+    showCode.innerText = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+
+}
+let handleButton2 = () => {
+    rgb2 = genHash();
+    btn2.innerText = rgb2;
+    document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+    showCode.innerHtml = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+    showCode.innerText = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+}
+
+btn1.addEventListener('click', handleButton1)
+
+btn2.addEventListener('click', handleButton2)
+
+
+showCode.addEventListener('click', () => {
+    // showCode.select();
+    // showCode.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(showCode.innerText);
+
+    // Alert the copied text
+    alert("Your Text Has Been Copied");
+});
+    </script>
+</body>
+</html>

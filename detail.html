@@ -52,7 +52,7 @@
             <button id="plus">+</button>
             <input type="text" id="input">
             <button id="minus">-</button> <br>
-            <a href="cart.html" target="_blank"><button id="details-cart">Add To Cart</button></a>
+            <a href="cart.html" target="_blank" id="cartt"><button id="details-cart">Add To Cart</button></a>
         </div>
     </div>
 
@@ -118,6 +118,33 @@
             }
         });
         // detail end
+
+        // Function to add product to cart
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Get the current cart from localStorage or initialize it
+
+  // Check if the product is already in the cart
+  const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+  if (existingProductIndex !== -1) {
+    // If the product exists, update the quantity
+    cart[existingProductIndex].quantity += 1; // Increase quantity by 1
+  } else {
+    // If the product doesn't exist, add it to the cart
+    cart.push({ ...product, quantity: 1 }); // Add product with quantity 1
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart)); // Save the updated cart back to localStorage
+}
+
+// Update the Add to Cart button click event
+document.getElementById("details-cart").addEventListener("click", () => {
+  const productId = getQueryParam("id");
+  fetchProductDetails(productId).then(product => {
+    addToCart(product); // Add product to cart
+  });
+});
+
     </script>
 </body>
 

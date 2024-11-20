@@ -1,12 +1,83 @@
-<div id="product-details">
+<!DOCTYPE html>
+<html lang="en">
 
-</div>
-<div class="det-btns">
-    <div class="dett">
-        <button id="plus">+</button>
-        <input type="text" id="input">
-        <button id="minus">-</button> <br>
-        <a href="cart.html" target="_blank"><button id="details-cart">Add To Cart</button></a>
-    </div>
-</div>
-<script src="product.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg" id="header">
+        <div class="container-fluid">
+            <img class="logo" src="assets/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"
+                                id="shopping"></i></a></li>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cart-items"></div>
+    <div id="total-price"></div>
+    
+    <footer class="container-fluid footer-content">
+        <div class="footer-col">
+            <a href="#"> <img src="assets/logo.png" alt=""></a><br>
+            <h4>Contact </h4>
+            <p><strong>Address:</strong> Shop No.18 Gulshan Iqbal Block 13C, karachi </p>
+            <p><strong>Phone:</strong> (+92)3333513507</p>
+            <p><strong>Hours:</strong> 10:00AM - 8:00PM</p>
+            <p class="social fs-5"><strong>Follow Us</strong>
+                <a href="#"><i class="fa-brands fa-square-facebook social-icons"></i></a>
+                <a href="#"><i class="fa-brands fa-square-instagram social-icons"></i></a>
+                <a href="#"><i class="fa-brands fa-square-twitter social-icons"></i></a>
+            </p>
+        </div>
+
+        <div class="footer-col fot-home col-12 col-md-4">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms And Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="footer-col fot-home col-12 col-lg-3 col-md-6">
+            <h4>My Account</h4>
+            <a href="">Sign In</a>
+            <a href="">View Cart</a>
+            <a href="">My Wishlist</a>
+            <a href="">Track My Order</a>
+            <a href="">Help</a>
+        </div>
+    </footer>
+</body>
+<script src="product.js">
+    </script>
+</html>

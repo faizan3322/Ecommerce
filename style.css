@@ -369,3 +369,31 @@ body{
     background-color: #112c28;
     color: white;
 }
+/* dad */
+.modall{
+    position:fixed;
+    left: 25%;
+    right: 25%;
+    top: 50%;
+    background-color: #1b694b;
+    color: #ffff;
+    border: solid 1px grey;
+    
+    max-width: fit-content;
+    display: none;
+    border-radius: 5px;
+}
+.modall button{
+  margin-left: 35%;
+  background-color: #4c816d;
+  border: none;
+  padding: 13px;
+  margin-bottom: 30px;
+  color: #ffff;
+  width: 100px;
+  
+}
+.modall p{
+    margin-top: 10px;
+    padding: 10px;
+}
